@@ -1,5 +1,6 @@
 package org.nfshopservicedev.app;
 import org.nfshopservicedev.app.shop.order.service.OrderListRepo;
+import org.nfshopservicedev.app.shop.order.service.OrderMapRepo;
 import org.nfshopservicedev.app.shop.product.model.Product;
 import org.nfshopservicedev.app.shop.product.service.ProductRepo;
 import org.nfshopservicedev.app.shop.service.ShopService;
@@ -10,8 +11,9 @@ public class Main {
     static void main() {
         var scanner = new Scanner(System.in);
         var productRepo = new ProductRepo();
-        var iOrderRepo = new OrderListRepo(); // oder OrderMapRepo
-        var shopService = new ShopService(productRepo, iOrderRepo);
+        var orderListRepo = new OrderListRepo();
+//        var orderMapRepo = new OrderMapRepo(); // oder OrderMapRepo
+        var shopService = new ShopService(productRepo, orderListRepo);
 
         productRepo.addProduct(new Product("112", "Kaffee", 3.5, 20));
         productRepo.addProduct(new Product("123", "Tee", 2.0, 15));
@@ -43,7 +45,7 @@ public class Main {
                 }
                 case "3" -> {
                     System.out.println("📦 Bestellungen:");
-                    for (var order : iOrderRepo.getAllOrders()) {
+                    for (var order : orderListRepo.getAllOrders()) {
                         System.out.println(order.id() + " - Summe: €" + order.totalSum());
                     }
                 }
