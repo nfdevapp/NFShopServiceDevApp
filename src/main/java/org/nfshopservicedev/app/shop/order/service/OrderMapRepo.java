@@ -10,8 +10,7 @@ public class OrderMapRepo implements IOrderRepo{
 
     @Override
     public List<Order> getAllOrders() {
-        List<Order> orders = new ArrayList<>(orderMap.values());
-        return orders;
+        return new ArrayList<>(orderMap.values());
     }
 
     @Override
