@@ -1,4 +1,4 @@
 package org.nfshopservicedev.app.shop.order.model;
-import java.util.List;
+import java.util.Map;
 
-public record Order(int id, List<Integer> productIds) {}
+public record Order(String id, Map<String, Integer> productQuantities, double totalSum) {}

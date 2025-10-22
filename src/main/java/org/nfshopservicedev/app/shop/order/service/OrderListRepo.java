@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderListRepo implements IOrderRepo{
-    private List<Order> orders = new ArrayList<>();
+    private final List<Order> orders = new ArrayList<>();
 
     @Override
     public void addOrder(Order order) {
@@ -12,24 +12,16 @@ public class OrderListRepo implements IOrderRepo{
     }
 
     @Override
-    public boolean removeOrder(int id) {
-        for (int i = 0; i < orders.size(); i++) {
-            if (orders.get(i).id() == id) {
-                orders.remove(i);
-                return true;
-            }
-        }
-        return false;
+    public void removeOrder(String orderId) {
+        orders.removeIf(o -> o.id().equals(orderId));
     }
 
     @Override
-    public Order getOrder(int id) {
-        for (var order : orders) {
-            if (order.id() == id) {
-                return order;
-            }
-        }
-        return null;
+    public Order getOrder(String orderId) {
+        return orders.stream()
+                .filter(o -> o.id().equals(orderId))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override

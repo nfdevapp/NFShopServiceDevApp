@@ -6,12 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 public class OrderMapRepo implements IOrderRepo{
-    private Map<Integer, Order> orderMap = new HashMap<>();
+    private final Map<String, Order> orderMap = new HashMap<>();
 
     @Override
     public List<Order> getAllOrders() {
-        List<Order> orders = new ArrayList<>();
-        orders.addAll(orderMap.values());
+        List<Order> orders = new ArrayList<>(orderMap.values());
         return orders;
     }
 
@@ -21,12 +20,12 @@ public class OrderMapRepo implements IOrderRepo{
     }
 
     @Override
-    public boolean removeOrder(int id) {
-        return orderMap.remove(id) != null;
+    public void removeOrder(String orderId) {
+        orderMap.remove(orderId);
     }
 
     @Override
-    public Order getOrder(int id) {
-        return orderMap.get(id);
+    public Order getOrder(String orderId) {
+        return orderMap.get(orderId);
     }
 }
