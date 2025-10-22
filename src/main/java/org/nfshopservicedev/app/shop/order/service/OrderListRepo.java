@@ -13,15 +13,21 @@ public class OrderListRepo implements IOrderRepo{
 
     @Override
     public void removeOrder(String orderId) {
-        orders.removeIf(o -> o.id().equals(orderId));
+        for (Order order : orders) {
+            if (order.id().equals(orderId)) {
+                orders.remove(order);
+            }
+        }
     }
 
     @Override
     public Order getOrder(String orderId) {
-        return orders.stream()
-                .filter(o -> o.id().equals(orderId))
-                .findFirst()
-                .orElse(null);
+        for(Order o : orders){
+            if(o.id().equals(orderId)){
+                return o;
+            }
+        }
+       return null;
     }
 
     @Override
