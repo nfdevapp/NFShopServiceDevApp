@@ -41,8 +41,6 @@ public class ShopService {
             Product p = productRepo.getProduct(entry.getKey());
             productRepo.updateStock(p.id(), p.stock() - entry.getValue());
         }
-
-
         // Bestellung speichern
         Order order = new Order(orderId, productQuantities, total);
         iOrderRepo.addOrder(order);
