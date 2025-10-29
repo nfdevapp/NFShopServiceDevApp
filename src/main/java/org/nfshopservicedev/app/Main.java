@@ -1,6 +1,5 @@
 package org.nfshopservicedev.app;
 import org.nfshopservicedev.app.shop.order.service.OrderListRepo;
-import org.nfshopservicedev.app.shop.order.service.OrderMapRepo;
 import org.nfshopservicedev.app.shop.product.model.Product;
 import org.nfshopservicedev.app.shop.product.service.ProductRepo;
 import org.nfshopservicedev.app.shop.service.ShopService;
