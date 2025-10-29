@@ -1,4 +1,4 @@
-package org.nfshopservicedev.app.shop.product.service;
+package org.nfshopservicedev.app.shop.product.repository;
 import org.nfshopservicedev.app.shop.product.model.Product;
 import java.util.ArrayList;
 import java.util.List;

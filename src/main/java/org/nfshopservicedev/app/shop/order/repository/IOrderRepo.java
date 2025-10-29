@@ -1,4 +1,4 @@
-package org.nfshopservicedev.app.shop.order.service;
+package org.nfshopservicedev.app.shop.order.repository;
 import org.nfshopservicedev.app.shop.order.model.Order;
 import java.util.List;
 

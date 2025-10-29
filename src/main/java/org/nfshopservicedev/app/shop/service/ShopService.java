@@ -1,9 +1,9 @@
 package org.nfshopservicedev.app.shop.service;
 
 import org.nfshopservicedev.app.shop.order.model.Order;
-import org.nfshopservicedev.app.shop.order.service.IOrderRepo;
+import org.nfshopservicedev.app.shop.order.repository.IOrderRepo;
 import org.nfshopservicedev.app.shop.product.model.Product;
-import org.nfshopservicedev.app.shop.product.service.ProductRepo;
+import org.nfshopservicedev.app.shop.product.repository.ProductRepo;
 
 import java.util.Map;
 
